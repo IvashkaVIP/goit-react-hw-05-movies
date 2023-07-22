@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 
 
 const MovieDetails = () => {
@@ -10,10 +10,26 @@ const MovieDetails = () => {
         // HTTP
     },[])
 
-    return (<div> <h2> Movie Details   {movieId}</h2>
-        
-        </div >
-        )
+    return (
+      <div>
+       <h2> Movie Details {movieId}</h2>
+        <ul>
+          <li>
+            <Link to="cast">
+              компонент Cast, информация о актерском составе. Рендерится на
+              странице MovieDetails
+            </Link>
+          </li>
+          <li>
+            <Link to="reviews">
+              компонент Reviews, информация об обзорах. Рендерится на странице
+              MovieDetails
+            </Link>
+          </li>
+            </ul>
+            <Outlet/>
+      </div>
+    );
 }
 
 export default MovieDetails;
