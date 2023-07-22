@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Movies = () => {
-    let render = useRef(false); 
-    console.log('Movies >>> useRef >>> ', render);
+    let firstRender = useRef(true); 
+    console.log('Movies >>> useRef >>> ', firstRender);
     useEffect(() => {
-        if (render.current) return; 
-        console.log(' Movies >>> useEffect >>>   ', Date.now());
-        render.current = true;
+        if (!firstRender.current) return; 
+        console.log('Movies >>> useEffect >>>   firstRender  ', Date.now());
+        firstRender.current = false;
     //  HTTP
   }, []);
   const movies = [

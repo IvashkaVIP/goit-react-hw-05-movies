@@ -1,11 +1,16 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 
 const MovieDetails = () => {
-    const params = useParams;
-    console.log('MovieDetails >>> params >>> ',params);
+    const {movieId} = useParams();
+    console.log('MovieDetails >>> params >>> ', movieId);
+    useEffect(() => {
+        
+        // HTTP
+    },[])
 
-    return(<div> <h2> Movie Details</h2>
+    return (<div> <h2> Movie Details   {movieId}</h2>
         
         </div >
         )
