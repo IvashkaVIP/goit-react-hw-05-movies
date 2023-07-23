@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 
 
@@ -30,7 +30,9 @@ const MovieDetails = () => {
             </Link>
           </li>
         </ul>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </div>
     );
 }
