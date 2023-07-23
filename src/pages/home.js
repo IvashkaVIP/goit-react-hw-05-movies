@@ -17,11 +17,9 @@ const Home = () => {
     };
     getMovies();
   }, []);
-
-  //console.log('movies >>>>> ', movies.length);
   return (
     <div>
-      <h1>trending today:</h1>
+      <h1>Trending today:</h1>
       <MoviesList movies={movies}/>
       {/* {movies.length && <MoviesList movies={movies} />} */}
     </div>
