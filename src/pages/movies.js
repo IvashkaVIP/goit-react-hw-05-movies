@@ -6,6 +6,7 @@ import MoviesList from 'components/MoviesList/MoviesList';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
+  const [imgNotFound, setImgNotFound] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const searchValue = searchParams.get('search') ?? '';
   useEffect(() => {
@@ -16,6 +17,8 @@ const Movies = () => {
     try {
       const resp = await getMoviesByQuery(query);
       setMovies(resp.data.results);
+      if (!movies.length) setImgNotFound(false);
+      else setImgNotFound(true);
     } catch (er) {
       console.log(er);
     }
@@ -29,7 +32,9 @@ const Movies = () => {
         setSearchParams={setSearchParams}
       />
       {movies && <MoviesList movies={movies} />}
-      {!movies.length && <h2>nothing was found for your request</h2>}
+      {imgNotFound && (
+        <h2>nothing was found for your request</h2>
+      )}
     </div>
   );
 };
