@@ -1,14 +1,15 @@
 const SearchForm = ({handleSearch, searchValue, setSearchParams}) => {
     const handleSubmit = evt => {
-      evt.preventDefault();
+        evt.preventDefault();
+        handleSearch(searchValue);
     };
       const handleChange = ({ target: { value } }) => {
         setSearchParams({ search: value });
       };
      
-    return <form onSubmit={handleSearch}>
+    return <form onSubmit={handleSubmit}>
         <input type="text" value={searchValue} onChange={handleChange} />
-        <button onSubmit={handleSubmit}>Search</button>
+        <button type='submit'>Search</button>
       </form>;
 
 }

@@ -14,3 +14,4 @@ export async function getMoviesByQuery(query) {
       `${BASE_URL}${SEARCH_END_POINT}?api_key=${API_KEY}&query=${query}`
     );
 }
+
