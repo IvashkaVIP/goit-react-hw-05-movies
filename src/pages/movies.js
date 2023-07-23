@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'api/Api';
+import SearchForm from 'components/SearchForm/SearchForm';
 
 const Movies = () => {
-  const [movies, setMovies] = useState([])
-  const [searchParams, setSearchParams] = useSearchParams({search: ''});
+  const [movies, setMovies] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchValue = searchParams.get('search') ?? '';
+  useEffect(() => {
+    !searchValue && setSearchParams({});
+  }, [searchValue, setSearchParams]);
 
   // useEffect(() = {
   //   return(1);
@@ -12,40 +17,22 @@ const Movies = () => {
 
   // const location = useLocation();
   // const [searchParams, setSearchParams] = useSearchParams();
-  // let movieId = searchParams.get('movieId') ?? ''; 
-    // console.log('Movies >>> movieId  ', movieId);
+  // let movieId = searchParams.get('movieId') ?? '';
+  // console.log('Movies >>> movieId  ', movieId);
 
-
-  const handleSearch = () => {
-    
-  }
-
-  const handleSubmit = evt => {
-    evt.preventDefault();
-  }
-
-  const handleChange = ({ target: { value } }) => {
-    setSearchParams({search: value})
-  }
-
-  const searchValue = searchParams.get('search');
+  const handleSearch = () => {};
 
   return (
     <div>
       <h2>Movies, find for Query</h2>
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={searchValue}
-          // onChange={evt => setSearchParams({ movieId: evt.target.value })}
-          onChange={handleChange}
-        />
-        <button onSubmit={handleSubmit}>Search</button>
-      </form>
+      <SearchForm
+        handleSearch={handleSearch}
+        searchValue={searchValue}
+        setSearchParams={setSearchParams}
+      ></SearchForm>
     </div>
   );
 };
-
 
 // const filteredMovies = movies.filter(movie => movie.includes(movieId));
 
@@ -70,8 +57,5 @@ const Movies = () => {
 //     </div>
 //   );
 // };
-
-
-
 
 export default Movies;
