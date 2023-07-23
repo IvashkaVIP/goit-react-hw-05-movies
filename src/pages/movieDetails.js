@@ -15,18 +15,16 @@ const MovieDetails = () => {
     return (
       <div>
         <h2> Movie Details {movieId}</h2>
-        <Link to={backLinkLocationRef.current}>назад к списку фильмов</Link>
+        <Link to={backLinkLocationRef.current}>Comeback</Link>
         <ul>
           <li>
             <Link to="cast">
-              компонент Cast, информация о актерском составе. Рендерится на
-              странице MovieDetails
+              Cast MovieDetails
             </Link>
           </li>
           <li>
             <Link to="reviews">
-              компонент Reviews, информация об обзорах. Рендерится на странице
-              MovieDetails
+              Reviews MovieDetails
             </Link>
           </li>
         </ul>
