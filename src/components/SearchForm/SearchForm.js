@@ -1,10 +1,11 @@
-const SearchForm = ({handleSearch, searchValue, setSearchParams}) => {
+const SearchForm = ({handleSearch, searchValue, setSearchParams, firstRender}) => {
     const handleSubmit = evt => {
         evt.preventDefault();
         handleSearch(searchValue);
     };
       const handleChange = ({ target: { value } }) => {
         setSearchParams({ search: value });
+        firstRender.current = false;
       };
      
     return <form onSubmit={handleSubmit}>

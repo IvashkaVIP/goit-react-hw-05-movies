@@ -14,14 +14,15 @@ const Home = () => {
         console.log(error);
       }
     };
+    
     getMovies();
-  }, []);
-  return (
+    }, []);
+
+    return (
     <div>
       <h1>Trending today:</h1>
       <MoviesList movies={movies} />
-      {/* {movies.length && <MoviesList movies={movies} />} */}
-    </div>
+      </div>
   );
 };
 

@@ -8,14 +8,9 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
   const { movieId } = useParams();
-  // console.log(
-  //   'MovieDetails >>> params >>> movieId : ',
-  //   movieId,
-  //   ' >>> ',
-  //   Date.now()
-  // );
+  // console.log('MovieDetails >>> params >>> movieId : ', movieId);
   useEffect(() => {
-    // console.log('movieDetails >>> useEffect >>> ', Date.now());
+    // console.log('movieDetails >>> useEffect >>> ');
     const getMovies = async () => {
       try {
         const resp = await getMoviesDetails(movieId);
