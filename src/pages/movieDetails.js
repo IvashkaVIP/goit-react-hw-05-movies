@@ -27,11 +27,6 @@ const MovieDetails = () => {
     
   }, [movieId]);
 
-  console.log(movie);
-  const isMovieDetails = Boolean(movie);
-  console.log(isMovieDetails);
-  
-
   return (
     <div>
       <h2> Movie Details {movieId}</h2>
