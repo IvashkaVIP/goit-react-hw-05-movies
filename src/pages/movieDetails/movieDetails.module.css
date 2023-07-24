@@ -1,10 +1,14 @@
 .container{
     padding: 10px 30px;
-    
+   
 }
 .btn-back {
-    
     margin-bottom: 10px;
+}
+.btn-back:hover {
+background-color: coral;
+border-color: transparent;
+color: rgb(255, 255, 255);
 }
 .add-info{
   border-top: 1px solid #303030;
@@ -15,4 +19,11 @@
 }
 li { 
     margin-bottom: 10px;
+}
+.wrap-link, .wrap-link:visited{
+    color: blue;
+    font-size: x-large;
+}
+.wrap-link:focus, .wrap-link:hover{
+    color: coral;
 }

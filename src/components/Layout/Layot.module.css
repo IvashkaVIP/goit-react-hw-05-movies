@@ -14,13 +14,13 @@
      display: flex;
      gap: 25px;
      list-style: none;
-     font-size: x-large; 
+     font-size: xx-large; 
 }
 .wrap-link{
     text-decoration: none;
     color: black;
     font-weight: 600;
 }
-.wrap-link:hover{
+.wrap-link:hover, .wrap-link:focus{
     color: coral;
 }

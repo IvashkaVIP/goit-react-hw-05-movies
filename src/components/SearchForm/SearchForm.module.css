@@ -4,6 +4,7 @@
 }
 
 .btn-search{
+font-size: large;
   margin-left: 5px;
   padding: 8px 10px;
   margin-bottom: 10px;
@@ -20,6 +21,7 @@
     color: white;
   }
 .input {
+ font-size: large;
   margin-left: 20px;
   width: 400px;
   padding: 8px;

@@ -27,7 +27,9 @@ const MovieDetails = () => {
   return (
     <div className={css['container']}>
       <Link to={backLinkLocationRef.current}>
-        <button className={css['btn-back']}type="button">Go back</button>
+        <button className={css['btn-back']} type="button">
+          Go back
+        </button>
       </Link>
 
       {movie && <MovieSelectedDetails movie={movie} />}
@@ -35,10 +37,14 @@ const MovieDetails = () => {
         <p> Additional information </p>
         <ul>
           <li>
-            <Link to="cast">Cast</Link>
+            <Link className={css['wrap-link']} to="cast">
+              Cast
+            </Link>
           </li>
           <li>
-            <Link to="reviews">Reviews</Link>
+            <Link className={css['wrap-link']} to="reviews">
+              Reviews
+            </Link>
           </li>
         </ul>
       </div>

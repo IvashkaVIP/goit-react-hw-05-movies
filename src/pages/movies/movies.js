@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'apiService/Api';
 import SearchForm from 'components/SearchForm/SearchForm';
 import MoviesList from 'components/MoviesList/MoviesList';
-import css from './movies.module.css'
+
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -23,7 +23,7 @@ const Movies = () => {
     try {
       const resp = await getMoviesByQuery(query);
       setMovies(resp.data.results);
-    } catch (er) {
+      } catch (er) {
       console.log(er);
     }
   };

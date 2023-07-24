@@ -1,0 +1,9 @@
+.wrap-link {
+    font-size: x-large;
+}
+.wrap-link, .wrap-link:visited {
+ color: blue;
+}
+.wrap-link:hover{
+    color: coral;
+}
