@@ -22,4 +22,7 @@ export async function getMoviesDetails (id) {
   );
 }
 
-
+//https://api.themoviedb.org/3/movie/{movie_id}/credits
+export async function getMoviesCast(id) {
+  return await axios(`${BASE_URL}movie/${id}/credits?api_key=${API_KEY}`);
+}
