@@ -1,17 +1,32 @@
-import { useEffect, useRef, Suspense } from "react";
+import { getMoviesDetails } from "apiService/Api";
+import { useEffect, useRef, Suspense,useState } from "react";
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 
 
 const MovieDetails = () => {
+  const [movie, setMovie] = useState([]);
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
     const {movieId} = useParams();
     console.log('MovieDetails >>> params >>> ', movieId);
-    useEffect(() => {
-        
-        // HTTP
-    },[])
+    
+  // useEffect(() => {
+  //     try {
+  //       const getMovies = async () => {
+  //         const resp = await getMoviesDetails(movieId);
+  //         console.log(resp);
+  //       };
+  //     }
+  //     catch (er) {
+  //       console.log(er);
+  //     }
+  
+  //     getMovies ();
 
+  //   },[])
+
+  
+  
     return (
       <div>
         <h2> Movie Details {movieId}</h2>

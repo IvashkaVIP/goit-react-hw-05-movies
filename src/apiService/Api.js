@@ -15,3 +15,11 @@ export async function getMoviesByQuery(query) {
     );
 }
 
+// https://api.themoviedb.org/3/movie/{movie_id}
+export async function getMoviesDetails (id) {
+  return await axios(
+    `${BASE_URL}movie/${id}?api_key=${API_KEY}`
+  );
+}
+
+
