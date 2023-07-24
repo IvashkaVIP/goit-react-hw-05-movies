@@ -2,6 +2,7 @@ import { getMoviesDetails } from 'apiService/Api';
 import { useEffect, useRef, Suspense, useState } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import MovieSelectedDetails from 'components/MovieSelectedDetails/MovieSelectedDetails';
+import css from './movieDetails.module.css'
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState();
@@ -11,31 +12,36 @@ const MovieDetails = () => {
   // console.log('MovieDetails >>> params >>> movieId : ', movieId);
   useEffect(() => {
     // console.log('movieDetails >>> useEffect >>> ');
-    const getMovies = async () => {
+    const getDetails = async () => {
       try {
         const resp = await getMoviesDetails(movieId);
         // console.log(resp.data);
         setMovie(resp.data);
-      } catch(er) {console.log(er)}
+      } catch (er) {
+        console.log(er);
+      }
     };
-    getMovies();
-    
+    getDetails();
   }, [movieId]);
 
   return (
-    <div>
-      <Link to={backLinkLocationRef.current}>Comeback</Link>
+    <div className={css['container']}>
+      <Link to={backLinkLocationRef.current}>
+        <button className={css['btn-back']}type="button">Go back</button>
+      </Link>
 
       {movie && <MovieSelectedDetails movie={movie} />}
-      <p> Additional information </p>
-      <ul>
-        <li>
-          <Link to="cast">Cast MovieDetails</Link>
-        </li>
-        <li>
-          <Link to="reviews">Reviews MovieDetails</Link>
-        </li>
-      </ul>
+      <div className={css['add-info']}>
+        <p> Additional information </p>
+        <ul>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>

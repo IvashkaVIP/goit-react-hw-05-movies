@@ -19,12 +19,12 @@ const Cast = () => {
     getCast();
   }, [movieId]);
 
-  const photoPath = (path) => {
-     const photo = !path
-       ? `https://banffventureforum.com/wp-content/uploads/2019/08/No-Image.png`
-       : `https://image.tmdb.org/t/p/w300${path}`;
+  const photoPath = path => {
+    const photo = !path
+      ? `https://banffventureforum.com/wp-content/uploads/2019/08/No-Image.png`
+      : `https://image.tmdb.org/t/p/w300${path}`;
     return photo;
-  }
+  };
   return (
     <ul>
       {cast.map(item => (

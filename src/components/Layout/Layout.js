@@ -1,16 +1,21 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import css from './Layot.module.css'
 
 const Layout = () => {
   return (
-    <div>
-      <nav>
-        <ul>
+    <div className={css['container']}>
+      <nav className={css['header']}>
+        <ul className={css['wrap-nav']}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink className={css['wrap-link']} to="/">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/movies">Movies</NavLink>
+            <NavLink className={css['wrap-link']} to="/movies">
+              Movies
+            </NavLink>
           </li>
         </ul>
       </nav>

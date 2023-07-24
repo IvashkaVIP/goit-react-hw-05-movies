@@ -1,0 +1,10 @@
+.wrap-detail{
+    display: flex;
+    margin-bottom: 10px;
+    gap:20px;
+}
+.wrap-detail-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
