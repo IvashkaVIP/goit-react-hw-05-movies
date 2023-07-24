@@ -26,3 +26,8 @@ export async function getMoviesDetails (id) {
 export async function getMoviesCast(id) {
   return await axios(`${BASE_URL}movie/${id}/credits?api_key=${API_KEY}`);
 }
+
+//https://api.themoviedb.org/3/movie/{movie_id}/reviews
+export async function getMoviesReviews(id) {
+  return await axios(`${BASE_URL}movie/${id}/reviews?api_key=${API_KEY}`);
+}

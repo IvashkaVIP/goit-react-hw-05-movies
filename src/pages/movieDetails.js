@@ -29,11 +29,10 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h2> Movie Details {movieId}</h2>
       <Link to={backLinkLocationRef.current}>Comeback</Link>
 
       {movie && <MovieSelectedDetails movie={movie} />}
-
+      <p> Additional information </p>
       <ul>
         <li>
           <Link to="cast">Cast MovieDetails</Link>

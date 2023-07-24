@@ -5,7 +5,7 @@ import { getMoviesCast } from 'apiService/Api';
 const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
-  console.log('MovieDetails >>> Cast >>> ', movieId);
+  // console.log('MovieDetails >>> Cast >>> ', movieId);
   useEffect(() => {
     const getCast = async () => {
       try {
